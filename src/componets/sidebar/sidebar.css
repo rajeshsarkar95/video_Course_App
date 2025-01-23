@@ -1,0 +1,78 @@
+.wrapper {
+  width: 30%;
+  float: right;
+  display: flex;
+  justify-content: center;
+  height: 150vh;
+}
+.side_tittle {
+  width: 80%;
+}
+.side_number {
+  color: black;
+  display: flex;
+  justify-content: center;
+  background-color: #b2b2b2;
+  align-items: center;
+  width: 15%;
+  border-radius: 8px;
+  border: none;
+  height: 5vh;
+}
+.course-container {
+  width: 400px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.enroll-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #5a4beb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.enroll-btn:hover {
+  background-color: #4638b8;
+}
+.lecture-list {
+  width: 100%;
+  justify-content: center;
+  border: 2px solid rgb(238, 238, 238);
+  display: flex;
+  text-align: start;
+  height: 90vh;
+  border-radius: 5px;
+  gap: 10px;
+}
+.lecture_inner {
+  width: 80%;
+}
+.lecture-item {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid rgb(208, 207, 207);
+}
+input[type="checkbox"] {
+  width: 30px; 
+  height: 30px; 
+  border: 2px solid rgb(177, 166, 166); 
+  border-radius: 50%; 
+  appearance: none;
+  cursor: pointer;
+}
+label {
+  font-size: 14px;
+  color: black;
+  font-size: 16px ;
+  line-height: 1.5;
+  font-weight: 600;
+}
