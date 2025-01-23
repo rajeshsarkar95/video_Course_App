@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./sidebar.css";
 
-const App = () => {
+const App = ({ isChecked, onCheckChange }) => {
   const [lectures, setLectures] = useState([
     {
       id: 1,
@@ -9,7 +9,7 @@ const App = () => {
       completed: true,
     },
     { id: 2, title: "HTTP, Cookies, Sessions", completed: true },
-    { id: 3, title: "Session Attacks", completed: false },
+    { id: 3, title: "Session Attacks", completed: true },
     {
       id: 4,
       title: "Cross-Site Request Forgery, Same Origin Policy",
@@ -33,6 +33,12 @@ const App = () => {
           : lecture
       )
     );
+
+
+    const updatedLecture = lectures.find((lecture) => lecture.id === id);
+    if (updatedLecture) {
+      onCheckChange(!updatedLecture.completed);
+    }
   };
   return (
     <div className="wrapper">
@@ -52,11 +58,16 @@ const App = () => {
                 </div>
                 <div className="side_checkbox">
                   <input
+                    style={{
+                      borderRadius: "15px",
+                    }}
+                    className="Check_box"
                     type="checkbox"
                     id={`lecture-${lecture.id}`}
                     checked={lecture.completed}
                     onChange={() => toggleComplete(lecture.id)}
                   />
+                  <span className="custom-checkbox"></span>
                 </div>
               </div>
             ))}

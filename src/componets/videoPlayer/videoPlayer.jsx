@@ -10,6 +10,7 @@ import { IoIosShareAlt } from "react-icons/io";
 import { useRef, useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 
+
 function videoPlayer() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,12 +18,33 @@ function videoPlayer() {
   const [qulty, setQulty] = useState("780p");
   const [show, setShow] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [currentTime, setCurrentTime] = useState("0:00");
+  const [duration, setDuration] = useState("0:00");
+  const [isCompleted, setIsCompleted] = useState(false);
+
+  const handleVideoEnd = (props) => {
+    setIsCompleted(true);
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+  };
+
+  const handleLoadedMetadata = () => {
+    const video = videoRef.current;
+    if (video) {
+      setDuration(formatTime(video.duration));
+    }
+  };
 
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (video) {
       const progressValue = (video.currentTime / video.duration) * 100;
       setProgress(progressValue);
+      setCurrentTime(formatTime(video.currentTime));
     }
   };
 
@@ -99,6 +121,7 @@ function videoPlayer() {
             className="video-player"
             width="100%"
             onTimeUpdate={handleTimeUpdate}
+            onLoadedMetadata={handleLoadedMetadata}
 
           >
             <source
@@ -139,7 +162,7 @@ function videoPlayer() {
               </i>
             </div>
             <div className="timeing_bar togethar">
-              <p className="timeing_show">12:00/6:12</p>
+              <p className="timeing_show">{currentTime} / {duration}</p>
             </div>
             <div className="sound_bar togethar">
               {show &&

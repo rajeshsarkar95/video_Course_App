@@ -61,18 +61,108 @@
   gap: 10px;
   border-bottom: 1px solid rgb(208, 207, 207);
 }
+.side_checkbox {
+  border-radius: 50%;
+}
 input[type="checkbox"] {
-  width: 30px; 
-  height: 30px; 
-  border: 2px solid rgb(177, 166, 166); 
-  border-radius: 50%; 
-  appearance: none;
+  display: none;
+}
+.custom-checkbox {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgb(177, 166, 166);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
   cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked + .custom-checkbox {
+  background-color: green;
+  border-color: green;
+}
+.custom-checkbox::after {
+  content: '✔';
+  font-size: 20px;
+  color: white;
+  display: none;
+}
+input[type="checkbox"]:checked + .custom-checkbox::after {
+  display: block;
 }
 label {
-  font-size: 14px;
+  font-size: 16px;
   color: black;
-  font-size: 16px ;
   line-height: 1.5;
   font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 40%;
+  }
+  .course-container {
+    width: 100%;
+  }
+  .lecture-list {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  .lecture_inner {
+    width: 100%;
+  }
+  .lecture-item {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-container {
+    padding: 15px;
+  }
+  .enroll-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .lecture-list {
+    gap: 5px;
+  }
+  .lecture-item {
+    margin-top: 8px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+  }
+  .custom-checkbox {
+    width: 25px;
+    height: 25px;
+  }
+  label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    padding: 10px;
+  }
+  .course-container {
+    padding: 10px;
+  }
+  .lecture-list {
+    border: none;
+  }
+  .custom-checkbox {
+    width: 20px;
+    height: 20px;
+  }
 }
