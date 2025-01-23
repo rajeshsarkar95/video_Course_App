@@ -179,6 +179,7 @@ function videoPlayer() {
               <i>
                 <AiFillSound className="icon " />
                 <input
+                  className="Volume_range"
                   type="range"
                   min="0"
                   max="1"

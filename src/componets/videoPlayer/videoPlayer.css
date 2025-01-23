@@ -159,6 +159,10 @@ h3 {
   .togethar {
     font-size: 18px;
   }
+  .Volume_range{
+    font-size: 12px;
+    display: none;
+  }
 }
 @media (max-width: 992px) {
   .video_fram {
@@ -194,9 +198,13 @@ h3 {
     font-size: 16px;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 300px) {
   .video_fram {
     height: 45vh;
+  }
+  .Volume_range{
+    display: none;
+    font-size: 12px;
   }
   .tabs {
     display: flex;
