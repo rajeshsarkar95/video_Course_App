@@ -2,6 +2,7 @@ import Sidebar from './componets/sidebar/sidebar'
 import VideoPlayer from './componets/videoPlayer/videoPlayer'
 import { useState } from 'react';
 
+
 function App() {
   const [isChecked, setIsChecked] = useState(false);
 

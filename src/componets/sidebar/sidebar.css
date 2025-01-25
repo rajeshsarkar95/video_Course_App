@@ -153,7 +153,7 @@ label {
 
 @media (max-width: 576px) {
   .wrapper {
-    padding: 10px;
+    margin-top: 82px;
   }
   .course-container {
     padding: 10px;

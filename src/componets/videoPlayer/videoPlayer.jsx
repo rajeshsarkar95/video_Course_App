@@ -137,7 +137,7 @@ function videoPlayer() {
             value={progress}
             onChange={handleSeek}
             style={{
-              width: '100%',
+              width: '99%',
               appearance: 'none',
               height: '5px',
               backgroundColor: '#ccc',
